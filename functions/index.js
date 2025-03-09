@@ -18,11 +18,11 @@ app.use(express.urlencoded({ extended: false }));
 const router = express.Router();
 // Serve static files (CSS, images, etc.) from the 'public' directory
 //app.use(express.static(__dirname));
-//let views = path.join(__dirname, '../');
+let views = path.join(__dirname, '../');
 
 // Home route.
 router.get('/', (req, res) => {
-  res.sendFile('home.html', { root: __dirname });
+  res.sendFile('home.html', { root: views });
 });
 
 router.get("/hello", (req, res) => res.send("Hello World!"));
