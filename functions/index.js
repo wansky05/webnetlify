@@ -12,9 +12,9 @@ const fb = require('./fb.js');
 const {getBuffer} = require('./myfunc.js');
 const downloaderyt = require('./downloaderyt.js');
 const downloadFileAsBuffer = require('./downloadFileAsBuffer.js');
+const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-const app = express();
 const router = express.Router();
 router.get("/hello", (req, res) => res.send("Hello World!"));
 
