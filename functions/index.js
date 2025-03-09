@@ -14,6 +14,9 @@ const downloadFileAsBuffer = require('./downloadFileAsBuffer.js');
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+// Serve static files (CSS, images, etc.) from the 'public' directory
+app.use(express.static(__dirname));
+
 const router = express.Router();
 router.get("/hello", (req, res) => res.send("Hello World!"));
 
