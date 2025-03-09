@@ -369,7 +369,7 @@ const q = req.query.data
 const emulate = () =>{
 async function start() {
 try{
-let baseUrl = `${req.protocol}://${req.headers.host}.netlify/functions/index/`
+let baseUrl = `${req.protocol}://${req.headers.host}/.netlify/functions/index/`
 const respon = await yta(q,baseUrl)
   res.send(respon)
 }catch(e){
@@ -386,7 +386,7 @@ const q = req.query.data
 const emulate = () =>{
 async function start() {
 try{
-let baseUrl = `${req.protocol}://${req.headers.host}.netlify/functions/index/`
+let baseUrl = `${req.protocol}://${req.headers.host}/.netlify/functions/index/`
 const respon = await ytv(q,baseUrl)
   res.send(respon)
 }catch(e){
