@@ -15,16 +15,17 @@ const downloadFileAsBuffer = require('./downloadFileAsBuffer.js');
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// Serve static files (CSS, images, etc.) from the 'public' directory
-app.use(express.static(__dirname));
-
 const router = express.Router();
-router.get("/hello", (req, res) => res.send("Hello World!"));
+// Serve static files (CSS, images, etc.) from the 'public' directory
+//app.use(express.static(__dirname));
+//let views = path.join(__dirname, '../');
 
-router.get('/hai', async (req, res) => {
-    let html = await fs.readFileSync('./functions/home.html').toString()
-    res.send(html);
+// Home route.
+router.get('/', (req, res) => {
+  res.sendFile('home.html', { root: __dirname });
 });
+
+router.get("/hello", (req, res) => res.send("Hello World!"));
 
 router.get('/ytget/:id', async (req,res) => {
 const q = req.query.data
