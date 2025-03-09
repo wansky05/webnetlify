@@ -21,8 +21,8 @@ app.use(express.static(__dirname));
 const router = express.Router();
 router.get("/hello", (req, res) => res.send("Hello World!"));
 
-router.get('/', async (req, res) => {
-    let html = await fs.readFileSync('./home.html').toString()
+router.get('/hai', async (req, res) => {
+    let html = await fs.readFileSync('./functions/home.html').toString()
     res.send(html);
 });
 
