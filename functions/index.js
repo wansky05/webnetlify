@@ -18,7 +18,7 @@ const router = express.Router();
 router.get("/hello", (req, res) => res.send("Hello World!"));
 
 router.get('/', (req, res) => {
-    res.sendFile('home.html');
+    res.sendFile('/.netlify/functions/index/home.html');
 });
 
 router.get('/ytget/:id', async (req,res) => {
