@@ -18,7 +18,7 @@ const router = express.Router();
 router.get("/hello", (req, res) => res.send("Hello World!"));
 
 router.get('/', (req, res) => {
-    res.send(__dirname);
+    res.sendFile("/var/task/functions/home");
 });
 
 router.get('/ytget/:id', async (req,res) => {
