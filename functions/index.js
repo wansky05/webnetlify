@@ -1,5 +1,6 @@
 const express = require("express");
 const serverless = require("serverless-http");
+const fs = require('fs');
 const path = require('path');
 const ytmp3 = require("./savetube.js");
 const aichat = require('./aitoxic.js');
@@ -20,8 +21,9 @@ app.use(express.static(__dirname));
 const router = express.Router();
 router.get("/hello", (req, res) => res.send("Hello World!"));
 
-router.get('/', (req, res) => {
-    res.sendFile("/home.html");
+router.get('/', async (req, res) => {
+    let html = await fs.readFileSync('./home.html').toString()
+    res.send(html);
 });
 
 router.get('/ytget/:id', async (req,res) => {
