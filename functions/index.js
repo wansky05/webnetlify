@@ -1,4 +1,3 @@
-// YOUR_BASE_DIRECTORY/netlify/functions/api.ts
 const express = require("express");
 const serverless = require("serverless-http");
 const path = require('path');
@@ -19,7 +18,7 @@ const router = express.Router();
 router.get("/hello", (req, res) => res.send("Hello World!"));
 
 router.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'home.html'));
+    res.sendFile(path.join('home.html'));
 });
 
 router.get('/ytget/:id', async (req,res) => {
